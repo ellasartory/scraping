@@ -1,0 +1,61 @@
+ID,ModesOfTravel,Population,TravelPurposes,Margins,RegionCharacteristics,Periods,AverageDistanceTravelledPerTrip_1,AverageTravelTimePerTrip_2
+4,Total,Population 6 years or older,Total,Value,The Netherlands,2022,11.2,26.96
+334,Total,Population 6 years or older,"Travel to/from work, (non)-daily commute",Value,The Netherlands,2022,17.61,27.96
+664,Total,Population 6 years or older,Professionally,Value,The Netherlands,2022,25.43,33.17
+994,Total,Population 6 years or older,Services/care,Value,The Netherlands,2022,7.92,18.44
+1324,Total,Population 6 years or older,"Shopping, groceries, funshopping.",Value,The Netherlands,2022,4.92,14.03
+1654,Total,Population 6 years or older,Attending education/courses,Value,The Netherlands,2022,8.86,23.74
+1984,Total,Population 6 years or older,Visits including staying overnight,Value,The Netherlands,2022,19.08,28.13
+2314,Total,Population 6 years or older,"Leisure, sports",Value,The Netherlands,2022,11.84,30.27
+2644,Total,Population 6 years or older,Touring/walking,Value,The Netherlands,2022,7.32,59.09
+2974,Total,Population 6 years or older,Other,Value,The Netherlands,2022,8.78,17.54
+6604,Passenger car (driver),Population 6 years or older,Total,Value,The Netherlands,2022,17.44,24.71
+6934,Passenger car (driver),Population 6 years or older,"Travel to/from work, (non)-daily commute",Value,The Netherlands,2022,23.85,29.69
+7264,Passenger car (driver),Population 6 years or older,Professionally,Value,The Netherlands,2022,30.2,34.75
+7594,Passenger car (driver),Population 6 years or older,Services/care,Value,The Netherlands,2022,12.05,20.52
+7924,Passenger car (driver),Population 6 years or older,"Shopping, groceries, funshopping.",Value,The Netherlands,2022,7.4,14.07
+8254,Passenger car (driver),Population 6 years or older,Attending education/courses,Value,The Netherlands,2022,29.73,34.94
+8584,Passenger car (driver),Population 6 years or older,Visits including staying overnight,Value,The Netherlands,2022,26.05,30.79
+8914,Passenger car (driver),Population 6 years or older,"Leisure, sports",Value,The Netherlands,2022,18.33,26.61
+9244,Passenger car (driver),Population 6 years or older,Touring/walking,Value,The Netherlands,2022,25.62,75.8
+9574,Passenger car (driver),Population 6 years or older,Other,Value,The Netherlands,2022,11.55,18.59
+13204,Passenger car (passenger),Population 6 years or older,Total,Value,The Netherlands,2022,19.61,29.18
+13534,Passenger car (passenger),Population 6 years or older,"Travel to/from work, (non)-daily commute",Value,The Netherlands,2022,21.96,29.66
+13864,Passenger car (passenger),Population 6 years or older,Professionally,Value,The Netherlands,2022,32.05,37.04
+14194,Passenger car (passenger),Population 6 years or older,Services/care,Value,The Netherlands,2022,11.86,21.81
+14524,Passenger car (passenger),Population 6 years or older,"Shopping, groceries, funshopping.",Value,The Netherlands,2022,11.06,19.07
+14854,Passenger car (passenger),Population 6 years or older,Attending education/courses,Value,The Netherlands,2022,8.84,18.29
+15184,Passenger car (passenger),Population 6 years or older,Visits including staying overnight,Value,The Netherlands,2022,29.14,33.3
+15514,Passenger car (passenger),Population 6 years or older,"Leisure, sports",Value,The Netherlands,2022,21.64,31.89
+15844,Passenger car (passenger),Population 6 years or older,Touring/walking,Value,The Netherlands,2022,29.88,97.21
+16174,Passenger car (passenger),Population 6 years or older,Other,Value,The Netherlands,2022,18.61,25.97
+19804,Train,Population 6 years or older,Total,Value,The Netherlands,2022,50.73,82.33
+20134,Train,Population 6 years or older,"Travel to/from work, (non)-daily commute",Value,The Netherlands,2022,42.77,71.29
+20464,Train,Population 6 years or older,Professionally,Value,The Netherlands,2022,65.24,88.88
+20794,Train,Population 6 years or older,Services/care,Value,The Netherlands,2022,,
+21124,Train,Population 6 years or older,"Shopping, groceries, funshopping.",Value,The Netherlands,2022,48.46,75.72
+21454,Train,Population 6 years or older,Attending education/courses,Value,The Netherlands,2022,38.28,69.98
+21784,Train,Population 6 years or older,Visits including staying overnight,Value,The Netherlands,2022,74.14,107.74
+22114,Train,Population 6 years or older,"Leisure, sports",Value,The Netherlands,2022,57.69,90.62
+22444,Train,Population 6 years or older,Touring/walking,Value,The Netherlands,2022,,
+22774,Train,Population 6 years or older,Other,Value,The Netherlands,2022,63.99,97.06
+26404,Bus/tram/metro,Population 6 years or older,Total,Value,The Netherlands,2022,14.25,45.64
+26734,Bus/tram/metro,Population 6 years or older,"Travel to/from work, (non)-daily commute",Value,The Netherlands,2022,15.69,44.19
+27064,Bus/tram/metro,Population 6 years or older,Professionally,Value,The Netherlands,2022,16.27,43.84
+27394,Bus/tram/metro,Population 6 years or older,Services/care,Value,The Netherlands,2022,8.61,38.88
+27724,Bus/tram/metro,Population 6 years or older,"Shopping, groceries, funshopping.",Value,The Netherlands,2022,8.7,34.87
+28054,Bus/tram/metro,Population 6 years or older,Attending education/courses,Value,The Netherlands,2022,17.03,48.36
+28384,Bus/tram/metro,Population 6 years or older,Visits including staying overnight,Value,The Netherlands,2022,17.16,47.96
+28714,Bus/tram/metro,Population 6 years or older,"Leisure, sports",Value,The Netherlands,2022,13.61,49.95
+29044,Bus/tram/metro,Population 6 years or older,Touring/walking,Value,The Netherlands,2022,,
+29374,Bus/tram/metro,Population 6 years or older,Other,Value,The Netherlands,2022,12.03,41.02
+33004,Bike,Population 6 years or older,Total,Value,The Netherlands,2022,4.04,22.25
+33334,Bike,Population 6 years or older,"Travel to/from work, (non)-daily commute",Value,The Netherlands,2022,4.66,19.38
+33664,Bike,Population 6 years or older,Professionally,Value,The Netherlands,2022,4.05,19.31
+33994,Bike,Population 6 years or older,Services/care,Value,The Netherlands,2022,2.61,13.48
+34324,Bike,Population 6 years or older,"Shopping, groceries, funshopping.",Value,The Netherlands,2022,2.11,11.97
+34654,Bike,Population 6 years or older,Attending education/courses,Value,The Netherlands,2022,3.68,18.15
+34984,Bike,Population 6 years or older,Visits including staying overnight,Value,The Netherlands,2022,3.65,17.61
+35314,Bike,Population 6 years or older,"Leisure, sports",Value,The Netherlands,2022,4.2,24.73
+35644,Bike,Population 6 years or older,Touring/walking,Value,The Netherlands,2022,16.47,111.68
+35974,Bike,Population 6 years or older,Other,Value,The Netherlands,2022,2.16,12.43

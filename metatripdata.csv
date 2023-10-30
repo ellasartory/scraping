@@ -1,0 +1,9 @@
+odata.type,ID,Position,ParentID,Type,Key,Title,Description,MapYear,ReleasePolicy,Datatype,Unit,Decimals,Default,PresentationType
+Cbs.OData.Dimension,0,0,,Dimension,ModesOfTravel,Modes of travel,,,,,,,,
+Cbs.OData.Dimension,1,1,,Dimension,Population,Population,,,,,,,,
+Cbs.OData.Dimension,2,2,,Dimension,TravelPurposes,Travel purposes,,,,,,,,
+Cbs.OData.Dimension,3,3,,Dimension,Margins,Margins,,,,,,,,
+Cbs.OData.GeoDimension,4,4,,GeoDimension,RegionCharacteristics,Region characteristics,,,,,,,,
+Cbs.OData.TimeDimension,5,5,,TimeDimension,Periods,Periods,,,True,,,,,
+Cbs.OData.Topic,6,6,,Topic,AverageDistanceTravelledPerTrip_1,Average distance travelled per trip,"The average number of passenger kilometres travelled during regular trips. Regular passenger kilometres by mode of transport have been calculated on the basis of the stage mode so that the distances of means of transport used for pre- and post-transport are also measured separately. For example, in the case of a journey from home to work with successively the bicycle to the station, the train and on foot to the office, the passenger kilometres travelled by a stage mode of transport are assigned to the relevant mode of transport. Kilometres by plane are not counted. The number of trips counted is based on the main mode used in the trip.",,,Double,passenger kilometres ,2.0,Missing,Absolute
+Cbs.OData.Topic,7,7,,Topic,AverageTravelTimePerTrip_2,Average travel time per trip  ,"The average number of minutes travelled during a trip. To calculate the time travelled per mode the main travel mode of a trip is used. Per example, in case of a trip to work with successively the bicycle to the station, the train and on foot to the office, the entire travel duration of the trip is assigned to the train (main travel mode used in this trip).",,,Double,minutes,2.0,Missing,Absolute
