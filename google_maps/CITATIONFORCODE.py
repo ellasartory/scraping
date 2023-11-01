@@ -1,0 +1,1 @@
+# MajideND. (2022, October 24). Scraping Reviews from Google Maps. https://github.com/MajideND/scraping-reviews-from-googlemaps
