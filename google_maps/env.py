@@ -1,0 +1,2 @@
+URL = "https://www.google.com/maps/place/felyx/@52.332755,4.9126017,17z/data=!4m8!3m7!1s0x47c60b386ae291c5:0xeb6c2262ce37ea94!8m2!3d52.3327517!4d4.9151766!9m1!1b1!16s%2Fg%2F11v0t0nm2g?entry=ttu"
+DriverLocation = "./Driver/chromedriver.exe"
