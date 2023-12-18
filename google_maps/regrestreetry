@@ -6,7 +6,7 @@ from sklearn.tree import DecisionTreeRegressor, plot_tree
 import numpy as np
 
 # Load the data
-file_path = 'path_to_your/rating_and_count.csv'
+file_path = ("C:/Users/Admin/jupyter/regression tree/rating_and_count.csv")
 rating_and_count_df = pd.read_csv(file_path)
 
 # Preparing the data
@@ -52,16 +52,24 @@ plt.xlabel('Importance Score')
 plt.ylabel('Feature')
 plt.show()
 
+# Initialize an empty list to store the impacts
+impact_list = []
+
 # Analyzing the impact of each variable on ratings
-impact_df = pd.DataFrame(columns=['Feature', 'Average Impact on Rating'])
 baseline_predictions = reg_tree.predict(X_test)
 for feature in X_train.columns:
     modified_test_set = X_test.copy()
     modified_test_set[feature] = X_train[feature].mean()
     modified_predictions = reg_tree.predict(modified_test_set)
     average_impact = (modified_predictions - baseline_predictions).mean()
-    impact_df = impact_df.append({'Feature': feature, 'Average Impact on Rating': average_impact}, ignore_index=True)
+    impact_list.append({'Feature': feature, 'Average Impact on Rating': average_impact})
+
+# Convert the list of impacts to a DataFrame and sort it
+impact_df = pd.DataFrame(impact_list)
 impact_df = impact_df.sort_values(by='Average Impact on Rating', key=abs, ascending=False)
+
+# Displaying top 10 impacts for clarity
+print(impact_df.head(10))
 
 # Performing k-fold cross-validation
 cv_scores = cross_val_score(DecisionTreeRegressor(random_state=42, **best_params), 
@@ -73,8 +81,6 @@ cv_scores = cross_val_score(DecisionTreeRegressor(random_state=42, **best_params
 cv_scores_mean = np.mean(cv_scores)
 cv_scores_std = np.std(cv_scores)
 
-# Displaying top 10 impacts and cross-validation results for clarity
-print(impact_df.head(10))
+# Displaying cross-validation results for clarity
 print("Average Cross-Validation Score (Mean Squared Error):", cv_scores_mean)
 print("Standard Deviation of Cross-Validation Score:", cv_scores_std)
-
