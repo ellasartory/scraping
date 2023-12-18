@@ -1,8 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
 from sklearn.tree import DecisionTreeRegressor, plot_tree
+import numpy as np
 
 # Load the data
 file_path = 'path_to_your/rating_and_count.csv'
@@ -62,5 +63,18 @@ for feature in X_train.columns:
     impact_df = impact_df.append({'Feature': feature, 'Average Impact on Rating': average_impact}, ignore_index=True)
 impact_df = impact_df.sort_values(by='Average Impact on Rating', key=abs, ascending=False)
 
-# Displaying top 10 impacts for clarity
+# Performing k-fold cross-validation
+cv_scores = cross_val_score(DecisionTreeRegressor(random_state=42, **best_params), 
+                            X_train, y_train, 
+                            cv=5, 
+                            scoring='neg_mean_squared_error')
+
+# Calculating the average and standard deviation of the cross-validation scores
+cv_scores_mean = np.mean(cv_scores)
+cv_scores_std = np.std(cv_scores)
+
+# Displaying top 10 impacts and cross-validation results for clarity
 print(impact_df.head(10))
+print("Average Cross-Validation Score (Mean Squared Error):", cv_scores_mean)
+print("Standard Deviation of Cross-Validation Score:", cv_scores_std)
+
