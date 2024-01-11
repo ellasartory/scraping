@@ -1,12 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
 from sklearn.tree import DecisionTreeRegressor, plot_tree
 import numpy as np
+import seaborn as sns
 
 # Load the data
-file_path = ("C:/Users/Admin/jupyter/regression tree/rating_and_count.csv")
+file_path = ("C:/Users/J. Teunisse/jupyter/rating_and_count.csv")
 rating_and_count_df = pd.read_csv(file_path)
 
 # Preparing the data
@@ -37,10 +37,28 @@ best_params = grid_search.best_params_
 reg_tree = DecisionTreeRegressor(random_state=42, **best_params)
 reg_tree.fit(X_train, y_train)
 
-# Visualizing the tree
-plt.figure(figsize=(20,10))
-plot_tree(reg_tree, feature_names=X.columns, filled=True, max_depth=3, fontsize=10)
-plt.show()
+# Pruning the tree
+path = reg_tree.cost_complexity_pruning_path(X_train, y_train)
+ccp_alphas, impurities = path.ccp_alphas, path.impurities
+
+# Exclude any ccp_alpha values that are not positive due to floating-point precision errors
+ccp_alphas = ccp_alphas[ccp_alphas >= 0]
+
+# Find the optimal ccp_alpha that maximizes cross-validation score
+cv_scores = [np.mean(cross_val_score(DecisionTreeRegressor(random_state=42, ccp_alpha=alpha, **best_params),
+                                      X_train, y_train, cv=5, scoring='neg_mean_squared_error'))
+             for alpha in ccp_alphas]
+optimal_ccp_alpha = ccp_alphas[np.argmax(cv_scores)]
+
+# Retrain with the optimal ccp_alpha
+reg_tree_pruned = DecisionTreeRegressor(random_state=42, ccp_alpha=optimal_ccp_alpha, **best_params)
+reg_tree_pruned.fit(X_train, y_train)
+
+# Visualizing the pruned tree with a larger figure size
+plt.figure(figsize=(30, 20))
+plot_tree(reg_tree_pruned, feature_names=X.columns, filled=True, proportion=False, rounded=True)
+plt.savefig('tree_pruned.png', dpi=300)  # Saving the tree as a larger PNG
+plt.close()  # Close the plot
 
 # Extracting feature importances
 feature_importances = reg_tree.feature_importances_
@@ -66,15 +84,17 @@ for feature in X_train.columns:
     modified_test_set = X_test.copy()
     modified_test_set[feature] = X_train[feature].mean()
     modified_predictions = reg_tree.predict(modified_test_set)
-    average_impact = (modified_predictions - baseline_predictions).mean()
-    impact_list.append({'Feature': feature, 'Average Impact on Rating': average_impact})
+    impact_on_rating = (baseline_predictions - modified_predictions).mean()
+    impact_list.append({'Feature': feature, 'Average Impact on Rating': impact_on_rating})
 
-# Convert the list of impacts to a DataFrame and sort it
+# Convert the list of impacts to a DataFrame and sort it by the absolute values
 impact_df = pd.DataFrame(impact_list)
-impact_df = impact_df.sort_values(by='Average Impact on Rating', key=abs, ascending=False)
+impact_df['Absolute Impact on Rating'] = impact_df['Average Impact on Rating'].abs()
+impact_df = impact_df.sort_values(by='Absolute Impact on Rating', ascending=False)
 
-# Displaying top 10 impacts for clarity
-print(impact_df.head(10))
+# Displaying top 10 impacts for clarity with explanation
+print("Top 10 features by average impact on rating (positive values indicate higher feature values correspond to higher ratings, while negative values indicate higher feature values correspond to lower ratings):\n")
+print(impact_df.head(10).to_string(index=False))
 
 # Performing k-fold cross-validation
 cv_scores = cross_val_score(DecisionTreeRegressor(random_state=42, **best_params), 
@@ -89,4 +109,3 @@ cv_scores_std = np.std(cv_scores)
 # Displaying cross-validation results for clarity
 print("Average Cross-Validation Score (Mean Squared Error):", cv_scores_mean)
 print("Standard Deviation of Cross-Validation Score:", cv_scores_std)
-
